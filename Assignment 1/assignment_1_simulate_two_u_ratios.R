@@ -1,18 +1,18 @@
 #Assignment I
-n <- 100
+n <- 1000
 X <- numeric(length = n)
 
 
-for(i in 1:100) {
+for(i in 1:1000) {
   
   u1 <- runif(1,0,sqrt(1))
-  u2 <- runif(1,0,1)
-  z <- u1/u2
-  while( u1 < sqrt(1/(1 + (z)^2))) {
+  u2 <- runif(1,-1,1)
+  z <- u2/u1
+  while( u1^2 * (1 + z^2) <=1) {
     
     u1 <- runif(1,0,sqrt(1))
-    u2 <- runif(1,0,1)
-    z <- u1/u2
+    u2 <- runif(1,-1,1)
+    z <- u2/u1
   }
   
   X[i] <- z
